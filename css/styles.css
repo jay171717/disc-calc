@@ -1,0 +1,108 @@
+/* Main CSS, combines all into one import per page */
+
+@import url('header.css');
+@import url('cta.css');
+@import url('footer.css');
+
+
+:root {
+  --accent: hsl(60, 100%, 67%);
+  --accent-highlight: hsl(60, 100%, 90%);
+  --accent-shadow: hsl(60, 100%, 40%);
+  --white: hsl(0, 0%, 92%);
+  --black: hsl(0, 8%, 3%);
+  --black-highlight: hsl(0, 0%, 10%);
+  --black-shadow: rgba(0,0,0,0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  box-sizing: border-box;
+  background-color: darkgray;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .title, .header-text {
+  font-family: 'VT323', monospace;
+}
+
+::selection {
+  background: none;
+  color: var(--accent);
+}
+
+/* LINKS */
+
+a.link {
+  color: var(--accent);
+  text-decoration: none; 
+}
+
+a.link:hover {
+  color: var(--black);
+  text-decoration: none; 
+}
+
+/* GENERAL WRAPPER */
+.content-wrapper {
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 0;
+  color: var(--black);
+}
+
+/* TITLE SECTION */
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(30px, 4vw, 60px);
+  padding-bottom: clamp(10px, 2vw, 20px);
+  text-align: center;
+
+}
+
+.title {
+  color: var(--black);
+  font-size: clamp(60px, 9vw, 80px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.subtitle {
+  font-size: clamp(40px, 9vw, 60px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+  .title {
+    font-size: clamp(35px, 9vw, 50px);
+  }
+
+  .subtitle {
+    font-size: clamp(35px, 9vw, 40px);
+  }
+}
